@@ -1,9 +1,14 @@
 import java.util.Random;
+
 public abstract class Clothing {
-    Random random = new Random();
-	private int rarity;
-	private String slot;
-	private String mod1;
-	private String mod2;
-	private String mod3;
+    protected Random random = new Random();
+	protected int rarity;
+	protected String slot;
+	protected String mod1;
+	protected String mod2;
+	protected String mod3;
+
+	protected abstract String getRandomAttribute();
+	protected abstract String getRarityDescription();
+	public abstract String getDescription();
 }
