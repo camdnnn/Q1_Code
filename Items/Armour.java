@@ -51,7 +51,7 @@ public class Armour extends Clothing{
 		if(rarity == 3) {
 			descript = descript + modifications.get(0) + "\n";
 			descript = descript + modifications.get(1) + "\n";
-			descript = descript + modifications.get(0) + "\n";
+			descript = descript + modifications.get(2) + "\n";
 		}
 		if(rarity == 2) {
 			descript = descript + modifications.get(0) + "\n";
