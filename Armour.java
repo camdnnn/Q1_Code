@@ -1,14 +1,7 @@
 import java.util.Random;
 
-public interface Armour{
+public class Armour extends Clothing{
 
-	Random random = new Random();
-	private int rarity;
-	private String slot;
-	private String mod1;
-	private String mod2;
-	private String mod3;
-	
 	public Armour() {
 		
 		int gearSlot = random.nextInt(4);
