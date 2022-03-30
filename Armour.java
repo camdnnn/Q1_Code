@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Armour{
+public interface Armour{
 
 	Random random = new Random();
 	private int rarity;
