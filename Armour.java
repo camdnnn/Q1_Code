@@ -1,14 +1,5 @@
-import java.util.Random;
+public class Armour extends Clothing{
 
-public interface Armour{
-
-	Random random = new Random();
-	private int rarity;
-	private String slot;
-	private String mod1;
-	private String mod2;
-	private String mod3;
-	
 	public Armour() {
 		
 		int gearSlot = random.nextInt(4);
@@ -40,14 +31,14 @@ public interface Armour{
 		}
 	}
 	
-	private String getRandomAttribute() {
+	protected String getRandomAttribute() {
 		int r = random.nextInt(3);
 		if(r == 0) return "Strength + 5"; 
 		if(r == 1) return "Intelligence + 5"; 
 		return "Dexterity + 5"; 
 	}
 	
-	private String getRarityDescription() {
+	protected String getRarityDescription() {
 		if(rarity == 0) return "Common";
 		if(rarity == 1) return "Uncommon";
 		if(rarity == 2) return "Rare";
