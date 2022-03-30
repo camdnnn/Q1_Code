@@ -1,5 +1,8 @@
 package Items;
-public class Armour extends Clothing{
+
+import java.util.ArrayList;
+
+public class Armour extends BaseClothing{
 
 	public Armour() {
 		
@@ -18,47 +21,53 @@ public class Armour extends Clothing{
 		}
 		
 		rarity = random.nextInt(4);
+		int modLength = modifications.length;
+		String [] modTemp = new String[modLength + 3];
 		if(rarity == 3) {
-			modifications.add(getRandomAttribute());
-			modifications.add(getRandomAttribute());
-			modifications.add(getRandomAttribute());
+			modTemp[modLength] = getRandomAttribute();
+			modTemp[modLength+1] = getRandomAttribute();
+			modTemp[modLength+2] = getRandomAttribute();
 		}
 		else if(rarity == 2) {
-			modifications.add(getRandomAttribute());
-			modifications.add(getRandomAttribute());
+			modTemp[modLength] = getRandomAttribute();
+			modTemp[modLength+1] = getRandomAttribute();
 		}
 		else if(rarity == 1) {
-			modifications.add(getRandomAttribute());
+			modTemp[modLength] = getRandomAttribute();
 		}
 	}
-	
-	protected String getRandomAttribute() {
-		int r = random.nextInt(3);
-		if(r == 0) return "Strength + 5"; 
-		if(r == 1) return "Intelligence + 5"; 
-		return "Dexterity + 5"; 
+
+	public String[] getAttributes(){
+		return modifications;
 	}
-	
-	protected String getRarityDescription() {
+
+	public String getRarityDescription() {
 		if(rarity == 0) return "Common";
 		if(rarity == 1) return "Uncommon";
 		if(rarity == 2) return "Rare";
 		return "Epic";
 	}
+
+	protected String getRandomAttribute() {
+		int r = random.nextInt(3);
+		if(r == 0) return "Strength + 5"; ; 
+		if(r == 1) return "Intelligence + 5"; 
+		return "Dexterity + 5"; 
+	}
 	
 	public String getDescription() {
 		String descript = getRarityDescription() + " " + slot + ":\n";
 		if(rarity == 3) {
-			descript = descript + modifications.get(0) + "\n";
-			descript = descript + modifications.get(1) + "\n";
-			descript = descript + modifications.get(2) + "\n";
+			descript = descript + modifications[0] + "\n";
+			descript = descript + modifications[1] + "\n";
+			descript = descript + modifications[2] + "\n";
 		}
 		if(rarity == 2) {
-			descript = descript + modifications.get(0) + "\n";
-			descript = descript + modifications.get(1) + "\n";
+			descript = descript + modifications[0] + "\n";
+			descript = descript + modifications[1] + "\n";
 		}
 		if(rarity == 1) {
-			descript = descript + modifications.get(0) + "\n";
+			descript = descript + modifications[0] + "\n";
 		}
 		return descript;
 	}
