@@ -21,5 +21,5 @@ public class Rare extends RarityDecorator {
     public int getRarity() {
         return rarityCount;
     }
-    
+
 }
