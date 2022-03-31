@@ -9,9 +9,5 @@ public abstract class ModifierDecorator implements Clothing{
     public ModifierDecorator(Clothing clothing){
         this.clothing = clothing;
     }
-
-    public String getDescription() {
-        return clothing.getDescription() + modifier + "\n";
-    }
     
 }

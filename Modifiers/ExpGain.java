@@ -10,4 +10,9 @@ public class ExpGain extends ModifierDecorator {
         super(clothing);
     }
 
+    @Override
+    public String getDescription() {
+        return clothing.getDescription() + modifier + "\n";
+    }
+    
 }
