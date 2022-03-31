@@ -1,10 +1,9 @@
 package Facotry;
 
-import Items.*;
-import Rarities.*;
-import Modifiers.*;
-
 import java.util.Random;
+
+import Items.Clothing;
+import Rarities.RarityDecorator;
 
 public abstract class ClothingFactory {
 
