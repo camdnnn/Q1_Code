@@ -7,35 +7,6 @@ import Rarities.*;
 public class EvenFactory extends ClothingFactory {
 
     @Override
-    protected BaseClothing slot(Rarirty rarirty) {
-        int slot = random.nextInt(10);
-
-        slot = 1;
-
-        if (slot == 0){
-            return new Amulet();
-        } else if (slot == 1) {
-            return new Belt(rarirty);
-        } else if (slot == 2) {
-            return new Boots();
-        } else if (slot == 3) {
-            return new ChestPiece();
-        } else if (slot == 4) {
-            return new Gloves();
-        } else if (slot == 5) {
-            return new Helm();
-        } else if (slot == 6) {
-            return new Pants();
-        } else if (slot == 7) {
-            return new Pauldron();
-        } else if (slot == 8) {
-            return new Ring();
-        } else {
-            return new Shield();
-        }
-    }
-
-    @Override
     protected Rarirty rarity() {
         int rarity = random.nextInt(7);
 
@@ -57,19 +28,36 @@ public class EvenFactory extends ClothingFactory {
     }
 
     @Override
-    protected Clothing modifiers(BaseClothing clothing) {
-        int count = clothing.getRarirty().getCount();
+    protected BaseClothing slot(Rarirty rarirty) {
+        int slot = random.nextInt(10);
 
-        Clothing modClothing = (Clothing) clothing;
-        for (int i = 0; i < count; i++){
-            modClothing = chooseModifier(modClothing);
+        slot = 1;
+
+        if (slot == 0){
+            return new Amulet(rarirty);
+        } else if (slot == 1) {
+            return new Belt(rarirty);
+        } else if (slot == 2) {
+            return new Boots(rarirty);
+        } else if (slot == 3) {
+            return new ChestPiece(rarirty);
+        } else if (slot == 4) {
+            return new Gloves(rarirty);
+        } else if (slot == 5) {
+            return new Helm(rarirty);
+        } else if (slot == 6) {
+            return new Pants(rarirty);
+        } else if (slot == 7) {
+            return new Pauldron(rarirty);
+        } else if (slot == 8) {
+            return new Ring(rarirty);
+        } else {
+            return new Shield(rarirty);
         }
-
-        return modClothing;
     }
 
     @Override
-    protected Clothing chooseModifier(Clothing clothing){
+    protected Clothing addModifier(Clothing clothing){
         int modifier = random.nextInt(7);
 
         if (modifier == 0){

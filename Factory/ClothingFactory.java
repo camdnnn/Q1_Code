@@ -16,8 +16,18 @@ public abstract class ClothingFactory {
 
     protected abstract Rarirty rarity();
     protected abstract BaseClothing slot(Rarirty rarirty);
-    protected abstract Clothing modifiers(BaseClothing clothing);
-    protected abstract Clothing chooseModifier(Clothing clothing);
+    protected abstract Clothing addModifier(Clothing clothing);
+
+    protected Clothing modifiers(BaseClothing clothing) {
+        int count = clothing.getRarirty().getCount();
+
+        Clothing modClothing = (Clothing) clothing;
+        for (int i = 0; i < count; i++){
+            modClothing = addModifier(modClothing);
+        }
+
+        return modClothing;
+    }
 
     
 }
