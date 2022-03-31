@@ -7,7 +7,9 @@ public abstract class ModifierDecorator implements Clothing{
     protected String modifier;
 
     public ModifierDecorator(Clothing clothing){
-        this.clothing = clothing;
+        if(clothing.getRarity().getCount() <= layers){
+            this.clothing = clothing;
+		}
     }
     
 }
