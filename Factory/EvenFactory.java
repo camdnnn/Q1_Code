@@ -1,4 +1,4 @@
-package Facotry;
+package Factory;
 
 import Items.*;
 import Modifiers.*;
@@ -7,13 +7,15 @@ import Rarities.*;
 public class EvenFactory extends ClothingFactory {
 
     @Override
-    protected Clothing slot() {
+    protected BaseClothing slot(Rarirty rarirty) {
         int slot = random.nextInt(10);
+
+        slot = 1;
 
         if (slot == 0){
             return new Amulet();
         } else if (slot == 1) {
-            return new Belt();
+            return new Belt(rarirty);
         } else if (slot == 2) {
             return new Boots();
         } else if (slot == 3) {
@@ -34,29 +36,29 @@ public class EvenFactory extends ClothingFactory {
     }
 
     @Override
-    protected RarityDecorator rarity(Clothing clothing) {
+    protected Rarirty rarity() {
         int rarity = random.nextInt(7);
 
         if (rarity == 0){
-            return new Common(clothing);
+            return new Common();
         } else if (rarity == 1) {
-            return new Uncommon(clothing);
+            return new Uncommon();
         } else if (rarity == 2) {
-            return new Rare(clothing);
+            return new Rare();
         } else if (rarity == 3) {
-            return new Epic(clothing);
+            return new Epic();
         } else if (rarity == 4) {
-            return new Mythic(clothing);
+            return new Mythic();
         } else if (rarity == 5) {
-            return new Legendary(clothing);
+            return new Legendary();
         } else {
-            return new Unique(clothing);
+            return new Unique();
         }
     }
 
     @Override
-    protected Clothing modifiers(RarityDecorator clothing) {
-        int count = clothing.getRarity();
+    protected Clothing modifiers(BaseClothing clothing) {
+        int count = clothing.getRarirty().getCount();
 
         Clothing modClothing = (Clothing) clothing;
         for (int i = 0; i < count; i++){

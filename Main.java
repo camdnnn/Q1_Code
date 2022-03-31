@@ -1,5 +1,5 @@
-import Facotry.ClothingFactory;
-import Facotry.EvenFactory;
+import Factory.ClothingFactory;
+import Factory.EvenFactory;
 
 public class Main {
 

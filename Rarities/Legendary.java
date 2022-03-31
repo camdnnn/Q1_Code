@@ -1,23 +1,18 @@
 package Rarities;
 
-import Items.Clothing;
-
-public class Legendary extends RarityDecorator {
+public class Legendary extends Rarirty {
 
 	protected String rarity = "Legendary";
-    protected int rarityCount = 5;
+    protected int count = 5;
 
-    public Legendary(Clothing clothing) {
-        super(clothing);
-    }
-
-    public String getDescription() {
-        return rarity + " " + clothing.getDescription() + ":\n";
+    @Override
+    public String getRarity() {
+        return rarity;
     }
 
     @Override
-    public int getRarity() {
-        return rarityCount;
+    public int getCount() {
+        return count;
     }
     
 }

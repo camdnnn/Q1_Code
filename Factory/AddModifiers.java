@@ -1,15 +1,16 @@
-package Facotry;
+package Factory;
 
 import java.util.Random;
 
+import Items.BaseClothing;
 import Items.Clothing;
 import Modifiers.*;
-import Rarities.RarityDecorator;
+import Rarities.Rarirty;
 
 public class AddModifiers {
 
-    static Clothing addModifiers(RarityDecorator clothing){
-        int count = clothing.getRarity();
+    static Clothing addModifiers(BaseClothing clothing){
+        int count = clothing.getRarirty().getCount();
 
         Clothing modClothing = (Clothing) clothing;
         for (int i = 0; i < count; i++){
