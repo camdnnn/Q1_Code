@@ -13,10 +13,5 @@ public class Belt extends BaseClothing {
     public String getDescription() {
         return rarirty.getRarity() + " " + slot + ":\n";
     }
-
-    @Override
-    protected void setRarity() {
-        rarirty = new Epic();
-    }
     
 }

@@ -6,7 +6,6 @@ public abstract class BaseClothing implements Clothing {
 	protected String slot;
 	protected Rarirty rarirty;
 	
-	protected abstract void setRarity();
 	public Rarirty getRarirty() {
         return rarirty;
     }
