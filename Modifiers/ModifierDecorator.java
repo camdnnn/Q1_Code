@@ -1,5 +1,4 @@
 package Modifiers;
-import java.util.ArrayList;
 
 import Items.Clothing;
 import Rarities.Rarity;

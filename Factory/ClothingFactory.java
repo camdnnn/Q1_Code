@@ -1,6 +1,5 @@
 package Factory;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 import Items.BaseClothing;

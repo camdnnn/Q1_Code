@@ -1,7 +1,5 @@
 package Items;
 
-import java.util.ArrayList;
-
 import Rarities.Rarity;
 
 public abstract class BaseClothing implements Clothing {

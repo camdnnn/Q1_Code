@@ -1,7 +1,5 @@
 package Items;
 
-import java.util.ArrayList;
-
 import Rarities.Rarity;
 
 public interface Clothing {
