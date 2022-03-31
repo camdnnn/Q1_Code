@@ -1,7 +1,5 @@
 package Items;
 
-import java.util.ArrayList;
-
 public class Armour extends BaseClothing{
 
 	public Armour() {
@@ -21,24 +19,18 @@ public class Armour extends BaseClothing{
 		}
 		
 		rarity = random.nextInt(4);
-		int modLength = modifications.length;
-		String [] modTemp = new String[modLength + 3];
 		if(rarity == 3) {
-			modTemp[modLength] = getRandomAttribute();
-			modTemp[modLength+1] = getRandomAttribute();
-			modTemp[modLength+2] = getRandomAttribute();
+			getRandomAttribute();
+			getRandomAttribute();
+			getRandomAttribute();
 		}
 		else if(rarity == 2) {
-			modTemp[modLength] = getRandomAttribute();
-			modTemp[modLength+1] = getRandomAttribute();
+			getRandomAttribute();
+			getRandomAttribute();
 		}
 		else if(rarity == 1) {
-			modTemp[modLength] = getRandomAttribute();
+			getRandomAttribute();
 		}
-	}
-
-	public String[] getAttributes(){
-		return modifications;
 	}
 
 	public String getRarityDescription() {
@@ -56,20 +48,7 @@ public class Armour extends BaseClothing{
 	}
 	
 	public String getDescription() {
-		String descript = getRarityDescription() + " " + slot + ":\n";
-		if(rarity == 3) {
-			descript = descript + modifications[0] + "\n";
-			descript = descript + modifications[1] + "\n";
-			descript = descript + modifications[2] + "\n";
-		}
-		if(rarity == 2) {
-			descript = descript + modifications[0] + "\n";
-			descript = descript + modifications[1] + "\n";
-		}
-		if(rarity == 1) {
-			descript = descript + modifications[0] + "\n";
-		}
-		return descript;
+		return slot;
 	}
 	
 }

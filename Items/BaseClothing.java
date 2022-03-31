@@ -1,7 +1,8 @@
 package Items;
 import java.util.Random;
 
-public abstract class BaseClothing extends Clothing {
+public abstract class BaseClothing implements Clothing {
+    
     protected Random random = new Random();
 	protected int rarity;
 	protected String slot;

@@ -1,8 +1,5 @@
 package Items;
 
-public abstract class Clothing {
-	public String[] modifications;
-
-	public abstract String[] getAttributes();
+public interface Clothing {
 	public abstract String getDescription();
 }
