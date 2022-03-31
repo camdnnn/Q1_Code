@@ -1,6 +1,6 @@
 package Rarities;
 
-public abstract class Rarirty{
+public abstract class Rarity{
 
 	protected String rarity;
     protected int count;

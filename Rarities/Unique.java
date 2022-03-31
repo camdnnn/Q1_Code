@@ -1,6 +1,6 @@
 package Rarities;
 
-public class Unique extends Rarirty {
+public class Unique extends Rarity {
 
 	protected String rarity = "Unique";
     protected int count = 6;

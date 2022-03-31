@@ -1,17 +1,12 @@
 package Items;
 
-import Rarities.Rarirty;
+import Rarities.Rarity;
 
 public class Shield extends BaseClothing {
     protected String slot = "Shield";
 
-    public Shield(Rarirty rarirty) {
-        super(rarirty);
-    }
-
-    @Override
-    public String getDescription() {
-        return slot;
+    public Shield(Rarity rarity) {
+        super(rarity);
     }
     
 }

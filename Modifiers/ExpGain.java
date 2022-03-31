@@ -6,7 +6,7 @@ public class ExpGain extends ModifierDecorator {
 
     protected String modifier = "Experiene Gain + 5";
 
-    public ExpGain(Clothing clothing) {
+    public ExpGain(Clothing clothing) throws Exception {
         super(clothing);
     }
 

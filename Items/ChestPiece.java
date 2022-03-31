@@ -1,17 +1,17 @@
 package Items;
 
-import Rarities.Rarirty;
+import Rarities.Rarity;
 
 public class ChestPiece extends BaseClothing {
     protected String slot = "Chest Piece";
 
-    public ChestPiece(Rarirty rarirty) {
-        super(rarirty);
+    public ChestPiece(Rarity rarity) {
+        super(rarity);
     }
 
     @Override
     public String getDescription() {
-        return rarirty.getRarity() + " " + slot + ":\n";
+        return rarity.getRarity() + " " + slot + ":\n";
     }
     
 }

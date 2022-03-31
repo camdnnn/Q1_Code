@@ -7,7 +7,7 @@ import Rarities.*;
 public class EvenFactory extends ClothingFactory {
 
     @Override
-    protected Rarirty rarity() {
+    protected Rarity rarity() {
         int rarity = random.nextInt(7);
 
         if (rarity == 0){
@@ -28,36 +28,36 @@ public class EvenFactory extends ClothingFactory {
     }
 
     @Override
-    protected BaseClothing slot(Rarirty rarirty) {
+    protected BaseClothing slot(Rarity rarity) {
         int slot = random.nextInt(10);
 
         slot = 1;
 
         if (slot == 0){
-            return new Amulet(rarirty);
+            return new Amulet(rarity);
         } else if (slot == 1) {
-            return new Belt(rarirty);
+            return new Belt(rarity);
         } else if (slot == 2) {
-            return new Boots(rarirty);
+            return new Boots(rarity);
         } else if (slot == 3) {
-            return new ChestPiece(rarirty);
+            return new ChestPiece(rarity);
         } else if (slot == 4) {
-            return new Gloves(rarirty);
+            return new Gloves(rarity);
         } else if (slot == 5) {
-            return new Helm(rarirty);
+            return new Helm(rarity);
         } else if (slot == 6) {
-            return new Pants(rarirty);
+            return new Pants(rarity);
         } else if (slot == 7) {
-            return new Pauldron(rarirty);
+            return new Pauldron(rarity);
         } else if (slot == 8) {
-            return new Ring(rarirty);
+            return new Ring(rarity);
         } else {
-            return new Shield(rarirty);
+            return new Shield(rarity);
         }
     }
 
     @Override
-    protected Clothing addModifier(Clothing clothing){
+    protected Clothing addModifier(Clothing clothing) throws Exception{
         int modifier = random.nextInt(7);
 
         if (modifier == 0){

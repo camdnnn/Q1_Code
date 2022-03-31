@@ -1,16 +1,29 @@
 package Items;
 
-import Rarities.Rarirty;
+import java.util.ArrayList;
+
+import Rarities.Rarity;
 
 public abstract class BaseClothing implements Clothing {
 	protected String slot;
-	protected Rarirty rarirty;
-	
-	public Rarirty getRarirty() {
-        return rarirty;
+	protected Rarity rarity;
+
+	public BaseClothing(Rarity rarity){
+		this.rarity = rarity;
+	}
+
+	@Override
+	public Rarity getRarity() {
+        return rarity;
     }
 
-	public BaseClothing(Rarirty rarirty){
-		this.rarirty = rarirty;
+	@Override
+	public int getCount(){
+		return 0;
 	}
+
+	@Override
+	public String getDescription() {
+        return rarity.getRarity() + " " + slot + ":\n";
+    }
 }

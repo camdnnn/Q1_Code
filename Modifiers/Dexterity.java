@@ -6,7 +6,7 @@ public class Dexterity extends ModifierDecorator {
 
     protected String modifier = "Dexterity + 5";
 
-    public Dexterity(Clothing clothing) {
+    public Dexterity(Clothing clothing) throws Exception {
         super(clothing);
     }
 

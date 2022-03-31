@@ -6,7 +6,7 @@ public class Strength extends ModifierDecorator {
 
     protected String modifier = "Strength + 5";
 
-    public Strength(Clothing clothing) {
+    public Strength(Clothing clothing) throws Exception {
         super(clothing);
     }
 
