@@ -4,23 +4,17 @@ import Items.*;
 import Modifiers.*;
 import Rarities.*;
 
-public class EvenFactory extends ClothingFactory {
+public class BossFactory extends ClothingFactory {
 
     @Override
     protected Rarity rarity() {
-        int rarity = random.nextInt(7);
+        int rarity = random.nextInt(3);
 
         if (rarity == 0){
-            return new Common();
-        } else if (rarity == 1) {
-            return new Uncommon();
-        } else if (rarity == 2) {
-            return new Rare();
-        } else if (rarity == 3) {
             return new Epic();
-        } else if (rarity == 4) {
+        } else if (rarity == 1) {
             return new Mythic();
-        } else if (rarity == 5) {
+        } else if (rarity == 2) {
             return new Legendary();
         } else {
             return new Unique();
@@ -77,3 +71,4 @@ public class EvenFactory extends ClothingFactory {
     }
     
 }
+

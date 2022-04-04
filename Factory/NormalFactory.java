@@ -4,53 +4,35 @@ import Items.*;
 import Modifiers.*;
 import Rarities.*;
 
-public class EvenFactory extends ClothingFactory {
+public class NormalFactory extends ClothingFactory {
 
     @Override
     protected Rarity rarity() {
-        int rarity = random.nextInt(7);
+        double rarity = random.nextDouble();
 
-        if (rarity == 0){
+        if (rarity < 0.5){
             return new Common();
-        } else if (rarity == 1) {
+        } else if (rarity < 0.75) {
             return new Uncommon();
-        } else if (rarity == 2) {
+        } else if (rarity < 0.825) {
             return new Rare();
-        } else if (rarity == 3) {
-            return new Epic();
-        } else if (rarity == 4) {
-            return new Mythic();
-        } else if (rarity == 5) {
-            return new Legendary();
         } else {
-            return new Unique();
+            return new Epic();
         }
     }
 
     @Override
     protected BaseClothing slot(Rarity rarity) {
-        int slot = random.nextInt(10);
+        int slot = random.nextInt(3);
 
         if (slot == 0){
-            return new Amulet(rarity);
-        } else if (slot == 1) {
             return new Belt(rarity);
-        } else if (slot == 2) {
+        } else if (slot == 1) {
             return new Boots(rarity);
-        } else if (slot == 3) {
-            return new ChestPiece(rarity);
-        } else if (slot == 4) {
+        } else if (slot == 2) {
             return new Gloves(rarity);
-        } else if (slot == 5) {
-            return new Helm(rarity);
-        } else if (slot == 6) {
-            return new Pants(rarity);
-        } else if (slot == 7) {
-            return new Pauldron(rarity);
-        } else if (slot == 8) {
-            return new Ring(rarity);
         } else {
-            return new Shield(rarity);
+            return new Pants(rarity);
         }
     }
 
