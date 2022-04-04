@@ -23,7 +23,7 @@ public class NormalFactory extends ClothingFactory {
 
     @Override
     protected BaseClothing slot(Rarity rarity) {
-        int slot = random.nextInt(3);
+        int slot = random.nextInt(4);
 
         if (slot == 0){
             return new Belt(rarity);

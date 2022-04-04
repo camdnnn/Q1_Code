@@ -8,7 +8,7 @@ public class BossFactory extends ClothingFactory {
 
     @Override
     protected Rarity rarity() {
-        int rarity = random.nextInt(3);
+        int rarity = random.nextInt(4);
 
         if (rarity == 0){
             return new Epic();

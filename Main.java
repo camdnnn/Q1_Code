@@ -1,17 +1,16 @@
-import Factory.ClothingFactory;
-import Factory.EvenFactory;
+import Factory.*;
 import Items.Clothing;
-import Modifiers.Dexterity;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        ClothingFactory generator = new EvenFactory();
+        ClothingFactory generator = new BossFactory();
         Clothing clothing = generator.generate();
         System.out.println(clothing.getDescription() + "\n");
 
-        clothing = new Dexterity(clothing);
-        System.out.println(clothing.getDescription() + "\n");
+        for (int i = 0; i < 10; i++){
+            System.out.println(generator.generate().getDescription() + "\n");
+        }
     }
     
 }
